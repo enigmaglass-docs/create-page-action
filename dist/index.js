@@ -2688,19 +2688,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 258:
+/***/ 778:
 /***/ ((module) => {
 
-let wait = function (milliseconds) {
-  return new Promise((resolve) => {
-    if (typeof milliseconds !== 'number') {
-      throw new Error('milliseconds not a number');
-    }
-    setTimeout(() => resolve("done!"), milliseconds)
-  });
-};
-
-module.exports = wait;
+module.exports = eval("require")("axios");
 
 
 /***/ }),
@@ -2835,7 +2826,7 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
 const core = __nccwpck_require__(186);
-const wait = __nccwpck_require__(258);
+const axios = __nccwpck_require__(778);
 
 
 // most @actions toolkit packages have async methods
