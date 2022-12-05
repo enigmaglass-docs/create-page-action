@@ -1,13 +1,19 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'Create Page'
+description: 'Initialize a github-pages page from your workflows.'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  name:
+    description: 'name of repository'
     required: true
-    default: '1000'
+  org:
+    description: 'name of an organization'
+    required: false
+    default: null
+  access-token:
+    description: 'access token with repo scope'
+    required: true
 outputs:
-  time: # output will be available to future steps
-    description: 'The current time after waiting'
+  repo-id:
+    description: 'GraphQL ID of newly created repository'
 runs:
-  using: 'node16'
+  using: 'node12'
   main: 'dist/index.js'
