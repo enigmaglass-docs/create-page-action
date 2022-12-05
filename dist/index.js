@@ -9010,7 +9010,8 @@ async function run() {
       core.info('Page created: ' + response.data.html_url);
       //core.setOutput('id', repository.data.node_id);
     }).catch((error) => {
-      core.setFailed(error.message);
+      core.info('Page already exists...');
+      // core.setFailed(error.message);
       // core.setOutput('id', null);
     })
   } catch (error) {
